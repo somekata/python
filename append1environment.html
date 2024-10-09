@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python 入門ガイド - 付録1: Pythonの環境構築</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="list.html">目次</a>
+    </header>
+
+    <main>
+      <section>
+        <h1>付録1: Pythonの環境構築</h1>
+        <p>
+          この付録では、Pythonを使い始めるための環境構築について説明します。Python自体をインストールする方法から、AnacondaやBiocondaといったパッケージ管理ツールを使った方法、GitHubやGitBashの利用、そして仮想環境の設定方法までを網羅しています。
+        </p>
+      </section>
+
+      <section>
+        <h2>1. Pythonのインストール</h2>
+        <h3>Python単体のインストール</h3>
+        <p>
+          Pythonは公式サイト（<a
+            href="https://www.python.org/downloads/"
+            target="_blank"
+            >https://www.python.org/downloads/</a
+          >）から直接インストールできます。最新バージョンのインストーラーをダウンロードし、ガイドに従ってインストールしてください。インストール時には「PATHに追加する」オプションを忘れずに選択してください。
+        </p>
+
+        <h3>Anacondaを使ったインストール</h3>
+        <p>
+          <strong>Anaconda</strong>
+          は、Pythonとその関連ライブラリ、ツールを一括で管理できる便利なディストリビューションです。データサイエンスや機械学習の環境構築に最適です。Anacondaのインストールは、<a
+            href="https://www.anaconda.com/"
+            target="_blank"
+            >公式サイト</a
+          >からインストーラーをダウンロードし、指示に従ってインストールします。
+        </p>
+
+        <h3>Biocondaを使ったインストール</h3>
+        <p>
+          <strong>Bioconda</strong>
+          は、バイオインフォマティクス関連のツールを簡単にインストール・管理できるコンダ・チャンネルです。AnacondaやMinicondaをインストールした後に、Biocondaを利用することでバイオインフォマティクス向けのパッケージが手軽に使えるようになります。Biocondaの利用方法については、公式ドキュメント（<a
+            href="https://bioconda.github.io/"
+            target="_blank"
+            >Bioconda</a
+          >）を参考にしてください。
+        </p>
+      </section>
+
+      <section>
+        <h2>2. GitHubの利用</h2>
+        <p>
+          <strong>GitHub</strong>
+          は、ソフトウェアのバージョン管理や共同作業を行うためのプラットフォームです。Pythonプロジェクトのソースコード管理に役立ちます。GitHubを使うことで、プロジェクトの履歴管理やチームでの共同作業が容易になります。GitHubのアカウントを作成し、リポジトリを作成してプロジェクトを公開・管理しましょう。
+        </p>
+        <p>GitHubの使い方の基本:</p>
+        <ul>
+          <li>
+            <strong>リポジトリの作成</strong>:
+            プロジェクトごとにリポジトリを作成し、ソースコードを管理します。
+          </li>
+          <li>
+            <strong>コミット</strong>: 変更を保存し、履歴として記録します。
+          </li>
+          <li>
+            <strong>プルリクエスト</strong>:
+            変更内容を提案し、レビューを依頼する機能です。
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. GitBashとUbuntuの利用</h2>
+
+        <h3>ターミナル、コマンドプロンプト、PowerShell</h3>
+        <p>
+          開発やコマンド操作に使われるターミナルには、いくつかの種類があります。基本的な操作は似ていますが、プラットフォームや用途によって使い分けが行われます。
+        </p>
+        <ul>
+          <li>
+            <strong>ターミナル</strong>（Terminal）: UNIX/Linux環境やMac
+            OSで標準的に利用されるコマンドラインインターフェースです。BashやZshといったシェルが主に使用され、コマンドを直接入力して操作を実行できます。
+          </li>
+          <li>
+            <strong>コマンドプロンプト</strong>（Command Prompt）:
+            Windowsの標準的なコマンドラインインターフェースで、基本的なファイル操作やプログラムの実行ができます。PowerShellと比較すると、Windows環境でのシステム管理に使われることが多いです。
+          </li>
+          <li>
+            <strong>PowerShell</strong>:
+            Windowsに標準で搭載されているシェルで、コマンドプロンプトの拡張版と言えます。強力なスクリプト機能を持ち、システム管理に特化したコマンドやスクリプトが使用できます。
+          </li>
+        </ul>
+
+        <h3>GitBash</h3>
+        <p>
+          <strong>GitBash</strong>
+          は、Windows環境でもUNIX系のコマンドを使うことができるターミナルエミュレーターです。Gitを利用する際に非常に便利で、Bashコマンドを使ってプロジェクトの管理ができます。GitBashは、<a
+            href="https://gitforwindows.org/"
+            target="_blank"
+            >こちら</a
+          >からダウンロードしてインストールできます。
+        </p>
+
+        <h3>Ubuntu</h3>
+        <p>
+          <strong>Ubuntu</strong>
+          は、人気の高いLinuxディストリビューションであり、特に開発環境として利用されることが多いです。Ubuntuを使用することで、オープンソースツールをフル活用した開発環境が構築できます。<a
+            href="https://ubuntu.com/download"
+            target="_blank"
+            >公式サイト</a
+          >からダウンロードして、インストールできます。
+        </p>
+      </section>
+
+      <section>
+        <h2>4. 仮想環境の使い方</h2>
+        <p>
+          Pythonでは、プロジェクトごとに異なるライブラリやバージョンを管理するために<strong>仮想環境</strong>を使用します。仮想環境はプロジェクトごとに分離されているため、依存関係の競合を防ぎます。
+        </p>
+
+        <h3>仮想環境の作成</h3>
+        <p>
+          Python標準の`venv`モジュールを使って仮想環境を作成できます。次のコマンドを実行してください。
+        </p>
+        <pre><code>python -m venv myenv</code></pre>
+        <p>上記のコマンドで`myenv`という仮想環境が作成されます。</p>
+
+        <h3>仮想環境のアクティベート</h3>
+        <p>仮想環境をアクティベートするには、以下のコマンドを使用します。</p>
+        <ul>
+          <li>
+            <strong>Windowsの場合</strong>: <code>myenv\Scripts\activate</code>
+          </li>
+          <li>
+            <strong>Mac/Linuxの場合</strong>:
+            <code>source myenv/bin/activate</code>
+          </li>
+        </ul>
+
+        <h3>仮想環境の終了</h3>
+        <p>仮想環境を終了するには、以下のコマンドを実行します。</p>
+        <pre><code>deactivate</code></pre>
+
+        <h3>仮想環境でのライブラリインストール</h3>
+        <p>
+          仮想環境内で必要なライブラリをインストールする際は、通常通り`pip`を使います。
+        </p>
+        <pre><code>pip install パッケージ名</code></pre>
+      </section>
+      <section>
+        <h2>5. VSCodeの使い方</h2>
+        <p>
+          <strong>Visual Studio Code (VSCode)</strong>
+          は、軽量でありながら強力なエディタで、多くのプログラミング言語に対応しています。PythonやJavaScript、HTML/CSSなど、さまざまな言語をサポートしており、拡張機能を使ってさらに機能を追加することができます。以下では、VSCodeの基本的な使い方を説明します。
+        </p>
+
+        <h3>VSCodeのインストール</h3>
+        <p>
+          VSCodeは公式サイト（<a
+            href="https://code.visualstudio.com/"
+            target="_blank"
+            >こちら</a
+          >）からダウンロードできます。インストーラーをダウンロードして指示に従ってインストールを完了してください。
+        </p>
+
+        <h3>VSCodeの基本操作</h3>
+        <p>VSCodeを起動すると、以下のような基本的な機能が使えます。</p>
+        <ul>
+          <li>
+            <strong>ファイルの作成・編集</strong>:
+            エディタ内で新しいファイルを作成し、コードを記述できます。左側の「エクスプローラー」からファイルを開くか、新規作成できます。
+          </li>
+          <li>
+            <strong>ターミナル</strong>:
+            VSCode内蔵のターミナルを使用して、システムのコマンドや仮想環境の操作が可能です。ターミナルはメニューの「ターミナル」から開けます。
+          </li>
+          <li>
+            <strong>コード補完とシンタックスハイライト</strong>:
+            PythonやJavaScriptなど、多くのプログラミング言語でシンタックスハイライトやコード補完機能が提供されています。
+          </li>
+        </ul>
+
+        <h3>拡張機能</h3>
+        <p>
+          VSCodeにはさまざまな拡張機能が用意されており、プログラミングの効率を向上させるために役立ちます。以下は、Python開発に役立つ主要な拡張機能です。
+        </p>
+        <ul>
+          <li>
+            <strong>Python拡張機能</strong>:
+            Pythonコードの実行やデバッグ、仮想環境の自動検出をサポートする必須の拡張機能です。拡張機能はVSCodeの「拡張機能」タブから検索してインストールできます。
+          </li>
+          <li>
+            <strong>Pylint</strong>:
+            Pythonコードのスタイルやエラーをチェックするためのツールです。
+          </li>
+          <li>
+            <strong>Jupyter</strong>: VSCode内でJupyter
+            Notebookを開いて実行できる拡張機能です。
+          </li>
+        </ul>
+
+        <h3>デバッグ機能</h3>
+        <p>
+          VSCodeは強力なデバッグツールを提供しており、コードのエラーを見つけて修正するのに役立ちます。Pythonの場合、次の手順でデバッグが可能です。
+        </p>
+        <ol>
+          <li>VSCode内でPythonファイルを開きます。</li>
+          <li>
+            左側の「Run and
+            Debug」アイコンをクリックし、デバッグモードを開始します。
+          </li>
+          <li>
+            ブレークポイントを設定して、コードをステップ実行することができます。
+          </li>
+        </ol>
+
+        <h3>VSCodeのカスタマイズ</h3>
+        <p>
+          VSCodeは自分の好みに合わせてカスタマイズできます。例えば、テーマを変更したり、キーボードショートカットを自分用に設定することが可能です。「設定」メニューからさまざまなカスタマイズオプションにアクセスできます。
+        </p>
+      </section>
+
+      <p>
+        <button onclick="history.back()">戻る</button>
+        <a href="list.html">
+          <button>目次へ戻る</button>
+        </a>
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Python入門ガイド</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

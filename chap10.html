@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python 入門ガイド - 第10章: 次元削減</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="list.html">目次</a>
+    </header>
+
+    <main>
+      <section>
+        <h1>第10章: 次元削減</h1>
+        <p>
+          データが高次元になると、視覚化や解析が難しくなります。次元削減技術は、高次元データを低次元に変換し、重要な特徴を保持したままデータの視覚化や解析を容易にします。この章では、代表的な次元削減手法であるPCA、t-SNE、UMAPを紹介します。
+        </p>
+      </section>
+
+      <section>
+        <h2>主成分分析（PCA: Principal Component Analysis）</h2>
+        <p>
+          PCAは、データの分散が最大になる方向を見つけ出し、データをその方向に投影することで次元を削減します。これにより、データの重要な情報を保持したまま低次元に圧縮することができます。
+        </p>
+        <pre><code>from sklearn.decomposition import PCA
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# データセットの読み込み
+df = sns.load_dataset('iris')
+X = df.drop('species', axis=1)
+
+# PCAの適用
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X)
+
+# PCA結果のプロット
+plt.scatter(X_pca[:, 0], X_pca[:, 1], c=df['species'].astype('category').cat.codes)
+plt.title('PCAによる次元削減')
+plt.xlabel('PC1')
+plt.ylabel('PC2')
+plt.show()</code></pre>
+        <p>
+          この例では、`scikit-learn`のPCAを使って、`iris`データセットを2次元に圧縮し、各データポイントを2つの主成分に基づいてプロットしています。
+        </p>
+      </section>
+
+      <section>
+        <h2>t-SNE（t-Distributed Stochastic Neighbor Embedding）</h2>
+        <p>
+          t-SNEは、データの局所的な構造を保ちながら次元削減を行う手法で、高次元データのクラスタリングを視覚化する際によく使われます。
+        </p>
+        <pre><code>from sklearn.manifold import TSNE
+
+# t-SNEの適用
+tsne = TSNE(n_components=2, random_state=0)
+X_tsne = tsne.fit_transform(X)
+
+# t-SNE結果のプロット
+plt.scatter(X_tsne[:, 0], X_tsne[:, 1], c=df['species'].astype('category').cat.codes)
+plt.title('t-SNEによる次元削減')
+plt.show()</code></pre>
+        <p>
+          このコードでは、t-SNEを使って`iris`データセットを2次元に圧縮し、データの局所的なクラスタリングを視覚化しています。
+        </p>
+      </section>
+
+      <section>
+        <h2>UMAP（Uniform Manifold Approximation and Projection）</h2>
+        <p>
+          UMAPは、t-SNEに似た次元削減技術で、データの局所的および大域的な構造を保持しつつ、非常に効率的に次元削減を行います。UMAPは、大規模なデータセットや高速な計算が必要な場合に適しています。
+        </p>
+        <pre><code>import umap
+
+# UMAPの適用
+umap_model = umap.UMAP(n_components=2)
+X_umap = umap_model.fit_transform(X)
+
+# UMAP結果のプロット
+plt.scatter(X_umap[:, 0], X_umap[:, 1], c=df['species'].astype('category').cat.codes)
+plt.title('UMAPによる次元削減')
+plt.show()</code></pre>
+        <p>
+          このコードでは、UMAPを使って`iris`データセットを2次元に削減し、データのクラスタリングを視覚化しています。
+        </p>
+      </section>
+
+      <p>
+        <button onclick="history.back()">戻る</button>
+        <a href="list.html">
+          <button>目次へ戻る</button>
+        </a>
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Python入門ガイド</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

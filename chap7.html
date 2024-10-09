@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python 入門ガイド - 第7章: matplotlibを使ったグラフ作成</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="list.html">目次</a>
+    </header>
+
+    <main>
+      <section>
+        <h1>第7章: matplotlibを使ったグラフ作成</h1>
+        <p>
+          この章では、Pythonの強力なグラフ作成ライブラリである
+          <strong>matplotlib</strong>
+          を使って、さまざまな種類のグラフを作成する方法を学びます。
+        </p>
+      </section>
+
+      <section>
+        <h2>基本的な折れ線グラフ</h2>
+        <p>
+          `matplotlib`で最も基本的なグラフは折れ線グラフです。次の例は、2つのリストを使ってシンプルな折れ線グラフを作成します。
+        </p>
+        <pre><code>import matplotlib.pyplot as plt
+
+# データ
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 6, 8, 10]
+
+# グラフの作成
+plt.plot(x, y)
+plt.title('折れ線グラフ')
+plt.xlabel('X軸')
+plt.ylabel('Y軸')
+plt.show()</code></pre>
+        <p>
+          このコードでは、リスト `x` と `y`
+          のデータを使用して、折れ線グラフを描画しています。`plt.plot()`関数を使ってプロットし、`plt.show()`でグラフを表示します。
+        </p>
+      </section>
+
+      <section>
+        <h2>散布図の作成</h2>
+        <p>
+          散布図は、2つの変数の関係を視覚化するのに適しています。次のコードは、ランダムなデータを使った散布図の例です。
+        </p>
+        <pre><code>import matplotlib.pyplot as plt
+
+# データ
+x = [1, 2, 3, 4, 5, 6]
+y = [5, 7, 4, 6, 8, 7]
+
+# 散布図の作成
+plt.scatter(x, y)
+plt.title('散布図')
+plt.xlabel('X軸')
+plt.ylabel('Y軸')
+plt.show()</code></pre>
+        <p>
+          このコードは、`plt.scatter()`を使って散布図を作成し、2つの変数間の関係を視覚化します。
+        </p>
+      </section>
+
+      <section>
+        <h2>棒グラフの作成</h2>
+        <p>
+          棒グラフは、カテゴリー間の比較を行うのに適しています。次のコードでは、簡単な棒グラフを作成します。
+        </p>
+        <pre><code>import matplotlib.pyplot as plt
+
+# データ
+categories = ['A', 'B', 'C', 'D']
+values = [3, 7, 5, 9]
+
+# 棒グラフの作成
+plt.bar(categories, values)
+plt.title('棒グラフ')
+plt.xlabel('カテゴリー')
+plt.ylabel('値')
+plt.show()</code></pre>
+        <p>
+          このコードは、`plt.bar()`を使って棒グラフを作成し、各カテゴリーの値を視覚化します。
+        </p>
+      </section>
+
+      <section>
+        <h2>ヒストグラムの作成</h2>
+        <p>
+          ヒストグラムは、データの分布を視覚化するのに役立ちます。次の例では、ランダムデータを使ったヒストグラムを作成します。
+        </p>
+        <pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+# ランダムデータ
+data = np.random.randn(1000)
+
+# ヒストグラムの作成
+plt.hist(data, bins=30)
+plt.title('ヒストグラム')
+plt.xlabel('値')
+plt.ylabel('頻度')
+plt.show()</code></pre>
+        <p>
+          このコードでは、`numpy`を使ってランダムデータを生成し、`plt.hist()`を使ってヒストグラムを作成します。
+        </p>
+      </section>
+
+      <p>
+        <button onclick="history.back()">戻る</button>
+        <a href="chap8.html">
+          <button>第8章へ進む</button>
+        </a>
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Python入門ガイド</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

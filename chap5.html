@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python 入門ガイド - 第5章: 関数</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="list.html">目次</a>
+    </header>
+
+    <main>
+      <section>
+        <h1>第5章: 関数</h1>
+        <p>
+          関数は、特定の処理をひとまとまりにして再利用可能にするための便利な仕組みです。この章では、Pythonにおける関数の定義と使い方を学びます。
+        </p>
+      </section>
+
+      <section>
+        <h2>関数の定義</h2>
+        <p>
+          Pythonでは、`def`キーワードを使って関数を定義します。次の例では、2つの数値を受け取り、それらを加算して結果を返す関数を定義しています。
+        </p>
+        <pre><code>def add_numbers(a, b):
+    return a + b
+
+result = add_numbers(5, 3)
+print(result)</code></pre>
+        <p>
+          この関数 `add_numbers` は、2つの引数 `a` と `b`
+          を受け取り、その合計を返します。`result` には加算結果 `8`
+          が代入され、表示されます。
+        </p>
+      </section>
+
+      <section>
+        <h2>引数と戻り値</h2>
+        <p>
+          関数に渡す値を「引数」といい、関数が返す値を「戻り値」といいます。引数はカンマで区切って複数渡すことができ、戻り値は`return`文で指定します。
+        </p>
+        <p>
+          引数にはデフォルト値を設定することも可能です。次の例では、引数 `b`
+          にデフォルト値を設定しています。
+        </p>
+        <pre><code>def greet(name, greeting="こんにちは"):
+    print(f"{greeting}, {name}さん")
+
+greet("太郎")
+greet("次郎", "おはよう")</code></pre>
+        <p>
+          このコードでは、`greet`関数が名前とあいさつを表示します。`greeting`にデフォルト値として
+          `"こんにちは"` が設定されていますが、2番目の呼び出しでは `"おはよう"`
+          が使われます。
+        </p>
+      </section>
+
+      <section>
+        <h2>関数の応用: 再帰</h2>
+        <p>
+          関数は、再帰的に自分自身を呼び出すことができます。次の例では、再帰を使って数値の階乗を計算します。
+        </p>
+        <pre><code>def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))  # 結果は120</code></pre>
+        <p>
+          この関数は、`n`が`0`になるまで自分自身を呼び出し、最終的に階乗を計算します。`5`の階乗（5!）は
+          `120` です。
+        </p>
+      </section>
+
+      <p>
+        <button onclick="history.back()">戻る</button>
+        <a href="chap6.html">
+          <button>第6章へ進む</button>
+        </a>
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Python入門ガイド</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,113 @@
+/* ベーススタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fefefe;
+    color: #333;
+    margin: 10px;
+    padding: 10px;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+button {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3498db;
+}
+
+/* ナビゲーションバー */
+.navbar {
+    background-color: #2c3e50;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: #34495e;
+}
+
+/* アコーディオンのスタイル */
+.accordion {
+    background-color: #2c3e50;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    transition: 0.4s;
+}
+
+.accordion:hover {
+    background-color: #34495e;
+}
+
+.accordion:after {
+    content: '\002B'; /* "+" symbol */
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.accordion.active:after {
+    content: "\2212"; /* "-" symbol */
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+pre {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    background-color: #f4f4f4;
+    padding:10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow-x: auto;
+    line-height: 1.6;
+}
+code {
+    font-family: monospace;
+}
+div.column {
+    border: solid 1px #ccc;
+    background-color: aliceblue;
+    border-radius: 5px;
+    margin:10px;
+    padding:10px;
+}
+code.gray {
+    background-color: #eee;
+    border-radius: 2px;
+    border: solid 1px #ccc;
+}

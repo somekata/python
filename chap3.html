@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python 入門ガイド - 第3章: 条件分岐</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="list.html">目次</a>
+    </header>
+
+    <main>
+      <section>
+        <h1>第3章: 条件分岐</h1>
+        <p>
+          条件分岐は、プログラムの中で特定の条件が満たされた場合に異なる処理を実行するための重要な構文です。この章では、Pythonにおける条件分岐の基本を学びます。
+        </p>
+      </section>
+
+      <section>
+        <h2>if文の使い方</h2>
+        <p>
+          条件分岐の基本構文は、`if`文です。例えば、次のコードでは数値が10以上かどうかをチェックしています。
+        </p>
+        <pre><code>x = 15
+
+if x >= 10:
+    print("xは10以上です")</code></pre>
+        <p>
+          この例では、変数 `x`
+          が10以上であれば「xは10以上です」というメッセージが表示されます。Pythonではインデントが非常に重要で、`if`文に続く処理は必ずインデント（スペース4つ）で区切られます。
+        </p>
+      </section>
+
+      <section>
+        <h2>else文とelif文</h2>
+        <p>
+          `if`文に続いて、条件が満たされなかった場合に実行される`else`文や、複数の条件を扱うための`elif`文があります。
+        </p>
+        <pre><code>x = 5
+
+if x > 10:
+    print("xは10より大きいです")
+elif x == 10:
+    print("xは10です")
+else:
+    print("xは10未満です")</code></pre>
+        <p>
+          この例では、`x`
+          が10より大きい場合、等しい場合、そしてそれ以外の場合に応じて異なるメッセージが表示されます。
+        </p>
+      </section>
+
+      <section>
+        <h2>条件式の書き方</h2>
+        <p>Pythonでは、条件式には以下のような比較演算子を使います。</p>
+        <ul>
+          <li>`==` : 等しい</li>
+          <li>`!=` : 等しくない</li>
+          <li>`>` : より大きい</li>
+          <li>`>=` : 以上</li>
+          <li>`<` : より小さい</li>
+          <li>`<=` : 以下</li>
+        </ul>
+        <p>
+          また、条件式を組み合わせて使うこともできます。例えば、次のように複数の条件を`and`や`or`で組み合わせることができます。
+        </p>
+        <pre><code>x = 7
+y = 20
+
+if x > 5 and y < 30:
+    print("xは5より大きく、yは30より小さい")</code></pre>
+      </section>
+
+      <p>
+        <button onclick="history.back()">戻る</button>
+        <a href="chap4.html">
+          <button>第4章へ進む</button>
+        </a>
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Python入門ガイド</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

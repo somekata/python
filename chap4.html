@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python 入門ガイド - 第4章: ループ処理</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="list.html">目次</a>
+    </header>
+
+    <main>
+      <section>
+        <h1>第4章: ループ処理</h1>
+        <p>
+          ループ処理は、同じ処理を繰り返し実行するために使われる重要なプログラミング技術です。この章では、Pythonにおけるループ処理の基本を学びます。
+        </p>
+      </section>
+
+      <section>
+        <h2>forループの基本</h2>
+        <p>
+          `for`ループは、指定した範囲内のデータを順番に処理するために使用されます。たとえば、リスト内のすべての要素を順に処理するには次のようにします。
+        </p>
+        <pre><code>fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)</code></pre>
+        <p>
+          このコードはリスト`fruits`の中の要素を1つずつ取り出し、`print`関数で表示します。
+        </p>
+      </section>
+
+      <section>
+        <h2>range()関数を使ったループ</h2>
+        <p>
+          `range()`関数を使うことで、指定した回数分だけループを繰り返すことができます。
+        </p>
+        <pre><code>for i in range(5):
+    print(i)</code></pre>
+        <p>
+          このコードは、`0`から`4`までの整数を順に表示します。`range(5)`は`0`から始まり、`5`未満の整数を生成することを意味します。
+        </p>
+      </section>
+
+      <section>
+        <h2>whileループ</h2>
+        <p>
+          `while`ループは、条件が`True`である間、繰り返し処理を実行します。次の例では、`x`が5より小さい間、ループが実行されます。
+        </p>
+        <pre><code>x = 0
+
+while x < 5:
+    print(x)
+    x += 1</code></pre>
+        <p>
+          このループでは、`x`が`0`から始まり、毎回1ずつ増加し、`x`が`5`未満である限り繰り返し処理されます。
+        </p>
+      </section>
+
+      <section>
+        <h2>ループの終了とスキップ</h2>
+        <p>
+          `break`と`continue`を使って、ループを途中で終了したり、特定の処理をスキップしたりすることができます。
+        </p>
+        <pre><code>for i in range(10):
+    if i == 5:
+        break  # ループを終了
+    print(i)
+
+for i in range(10):
+    if i % 2 == 0:
+        continue  # 偶数をスキップ
+    print(i)</code></pre>
+        <p>
+          最初のループでは、`i`が`5`になった時点でループが終了します。2つ目のループでは、偶数がスキップされ、奇数だけが表示されます。
+        </p>
+      </section>
+
+      <p>
+        <button onclick="history.back()">戻る</button>
+        <a href="chap5.html">
+          <button>第5章へ進む</button>
+        </a>
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Python入門ガイド</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

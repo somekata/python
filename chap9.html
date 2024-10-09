@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python 入門ガイド - 第9章: 単変量解析と多変量解析</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="list.html">目次</a>
+    </header>
+
+    <main>
+      <section>
+        <h1>第9章: 単変量解析と多変量解析</h1>
+        <p>
+          この章では、単変量解析と多変量解析について学びます。データ解析においては、1つの変数を解析する単変量解析と、複数の変数の関係を調べる多変量解析がよく使われます。
+        </p>
+      </section>
+
+      <section>
+        <h2>単変量解析</h2>
+        <p>
+          単変量解析は、1つの変数に対して行う解析です。最も一般的な単変量解析は、平均値や中央値、標準偏差といった基本統計量の算出です。Pythonの`pandas`と`seaborn`を使って単変量解析を行う方法を見ていきましょう。
+        </p>
+        <pre><code>import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# データセットの読み込み
+df = sns.load_dataset('tips')
+
+# 基本統計量の表示
+print(df['total_bill'].describe())
+
+# ヒストグラムの作成
+sns.histplot(df['total_bill'])
+plt.title('Total Billのヒストグラム')
+plt.show()</code></pre>
+        <p>
+          このコードでは、`pandas`の`describe()`メソッドを使って基本的な統計情報を取得し、`seaborn`を使ってヒストグラムを描画しています。
+        </p>
+      </section>
+
+      <section>
+        <h2>多変量解析</h2>
+        <p>
+          多変量解析は、複数の変数間の関係を調べるための解析です。例えば、2つの変数間の相関を調べる散布図や、回帰分析がよく使用されます。
+        </p>
+        <pre><code># 散布図の作成
+sns.scatterplot(x='total_bill', y='tip', data=df)
+plt.title('Total Bill vs Tip')
+plt.show()
+
+# 相関行列の表示
+print(df.corr())
+
+# 相関行列のヒートマップ
+sns.heatmap(df.corr(), annot=True, cmap='coolwarm')
+plt.title('相関行列のヒートマップ')
+plt.show()</code></pre>
+        <p>
+          この例では、`seaborn`を使って2つの変数間の散布図を描画し、データセット全体の相関行列をヒートマップで可視化しています。
+        </p>
+      </section>
+
+      <section>
+        <h2>回帰分析</h2>
+        <p>
+          回帰分析は、多変量解析の中でも特に重要な手法です。ここでは、`seaborn`の`regplot`を使って簡単な回帰分析を行います。
+        </p>
+        <pre><code># 回帰分析
+sns.regplot(x='total_bill', y='tip', data=df)
+plt.title('回帰分析: Total Bill vs Tip')
+plt.show()</code></pre>
+        <p>
+          `regplot`は、散布図に加えて回帰線を表示し、2つの変数間の関係を視覚的に理解するのに役立ちます。
+        </p>
+      </section>
+
+      <p>
+        <button onclick="history.back()">戻る</button>
+        <a href="chap10.html">
+          <button>第10章へ進む</button>
+        </a>
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Python入門ガイド</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

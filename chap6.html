@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python 入門ガイド - 第6章: Pythonのライブラリ紹介</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="list.html">目次</a>
+    </header>
+
+    <main>
+      <section>
+        <h1>第6章: Pythonのライブラリ紹介</h1>
+        <p>
+          Pythonには、多様なタスクを効率的に行うためのライブラリが豊富に用意されています。この章では、データ操作、可視化、機械学習、Webアプリケーション開発などに役立つライブラリを紹介します。
+        </p>
+      </section>
+
+      <section>
+        <h2>1. pandas</h2>
+        <p>
+          <strong>pandas</strong>
+          は、データフレームを使用して表形式データを扱うためのライブラリです。CSVファイルの読み書きやデータの操作が簡単にできます。
+        </p>
+        <pre><code>import pandas as pd
+
+# CSVファイルの読み込み
+df = pd.read_csv('data.csv')
+print(df.head())</code></pre>
+      </section>
+
+      <section>
+        <h2>2. numpy</h2>
+        <p>
+          <strong>numpy</strong>
+          は、数値計算を効率的に行うためのライブラリで、多次元配列（ndarray）の操作に特化しています。
+        </p>
+        <pre><code>import numpy as np
+
+# 配列の作成
+arr = np.array([1, 2, 3, 4])
+print(arr)</code></pre>
+      </section>
+
+      <section>
+        <h2>3. matplotlib</h2>
+        <p>
+          <strong>matplotlib</strong>
+          は、データの可視化に使用されるライブラリで、折れ線グラフ、棒グラフ、散布図など、さまざまなグラフを作成できます。
+        </p>
+        <pre><code>import matplotlib.pyplot as plt
+
+# データのプロット
+plt.plot([1, 2, 3], [4, 5, 6])
+plt.title('Line Plot')
+plt.show()</code></pre>
+      </section>
+
+      <section>
+        <h2>4. seaborn</h2>
+        <p>
+          <strong>seaborn</strong>
+          は、統計的データの可視化に特化したライブラリで、美しいグラフを簡単に作成できます。
+        </p>
+        <pre><code>import seaborn as sns
+
+# データセットの読み込み
+df = sns.load_dataset('iris')
+
+# ペアプロットの作成
+sns.pairplot(df, hue='species')
+plt.show()</code></pre>
+      </section>
+
+      <section>
+        <h2>5. csv（標準ライブラリ）</h2>
+        <p>
+          <strong>csv</strong>
+          は、CSVファイルを読み書きするためのPython標準ライブラリです。pandasほど高度ではありませんが、シンプルなファイル操作に向いています。実際の開発では、<strong>pandas</strong>の使用が一般的です。
+        </p>
+        <pre><code>import csv
+
+# CSVファイルの読み込み
+with open('data.csv', newline='') as csvfile:
+    reader = csv.reader(csvfile)
+    for row in reader:
+        print(row)</code></pre>
+      </section>
+
+      <section>
+        <h2>6. tkinter</h2>
+        <p>
+          <strong>tkinter</strong>
+          は、PythonでGUIアプリケーションを作成するための標準ライブラリです。簡単なデスクトップアプリケーションを作成できます。
+        </p>
+        <pre><code>import tkinter as tk
+
+# ウィンドウの作成
+window = tk.Tk()
+window.title("Tkinter Window")
+window.mainloop()</code></pre>
+      </section>
+
+      <section>
+        <h2>7. Flask</h2>
+        <p>
+          <strong>Flask</strong>
+          は、軽量なWebアプリケーションフレームワークで、APIや小規模なWebサイトを簡単に作成できます。
+        </p>
+        <pre><code>from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello, Flask!"
+
+if __name__ == '__main__':
+    app.run()</code></pre>
+      </section>
+
+      <section>
+        <h2>8. scikit-learn</h2>
+        <p>
+          <strong>scikit-learn</strong>
+          は、機械学習に特化したライブラリで、分類、回帰、クラスタリング、次元削減などをサポートしています。
+        </p>
+        <pre><code>from sklearn.linear_model import LinearRegression
+
+# モデルの作成と訓練
+model = LinearRegression()
+X = [[1], [2], [3], [4]]
+y = [1, 2, 3, 4]
+model.fit(X, y)
+
+# 予測
+predictions = model.predict(X)
+print(predictions)</code></pre>
+      </section>
+
+      <section>
+        <h2>9. 次元削減技術（PCA, t-SNE, UMAP）</h2>
+        <p>
+          <strong>scikit-learn</strong>
+          ライブラリでは、PCA（主成分分析）やt-SNEなどの次元削減技術が使用できます。また、<strong>UMAP</strong>は、別のライブラリ<strong>umap-learn</strong>を使用して実行します。次元削減は、高次元データを可視化や解析しやすい低次元に変換するために利用されます。
+        </p>
+
+        <h3>PCA</h3>
+        <pre><code>from sklearn.decomposition import PCA
+
+pca = PCA(n_components=2)
+X_pca = pca.fit_transform(X)
+print(X_pca)</code></pre>
+
+        <h3>t-SNE</h3>
+        <pre><code>from sklearn.manifold import TSNE
+
+tsne = TSNE(n_components=2)
+X_tsne = tsne.fit_transform(X)
+print(X_tsne)</code></pre>
+
+        <h3>UMAP（umap-learnライブラリ）</h3>
+        <pre><code>import umap
+
+umap_model = umap.UMAP(n_components=2)
+X_umap = umap_model.fit_transform(X)
+print(X_umap)</code></pre>
+      </section>
+
+      <section>
+        <h2>10. その他のライブラリ</h2>
+        <ul>
+          <li><strong>openpyxl</strong>: Excelファイルの読み書きに使用。</li>
+          <li><strong>sqlite3</strong>: 軽量なデータベース管理をサポート。</li>
+          <li>
+            <strong>requests</strong>:
+            HTTPリクエストを送信するためのライブラリ。
+          </li>
+          <li>
+            <strong>beautifulsoup4</strong>: Webスクレイピング用のライブラリ。
+          </li>
+          <li>
+            <strong>Django</strong>:
+            大規模なWebアプリケーションのためのフレームワーク。
+          </li>
+        </ul>
+      </section>
+
+      <p>
+        <button onclick="history.back()">戻る</button>
+        <a href="chap7.html">
+          <button>第7章へ進む</button>
+        </a>
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Python入門ガイド</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

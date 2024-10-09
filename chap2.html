@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python 入門ガイド - 第2章: 変数とデータ型</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="list.html">目次</a>
+    </header>
+
+    <main>
+      <section>
+        <h1>第2章: 変数とデータ型</h1>
+        <p>
+          この章では、Pythonにおける変数とデータ型について学びます。プログラム内でデータを保持したり操作したりするためには、データを変数に保存する必要があります。また、Pythonにはいくつかの異なるデータ型があり、適切な型を使うことで効率的なプログラミングが可能です。
+        </p>
+      </section>
+
+      <section>
+        <h2>変数の宣言</h2>
+        <p>
+          変数とは、データを保存するための名前付きの「箱」のようなものです。Pythonでは、次のようにして変数を宣言し、データを代入します。
+        </p>
+        <pre><code>x = 10
+y = "Hello"
+z = 3.14</code></pre>
+        <p>
+          上記の例では、`x` に整数 `10` を、`y` に文字列 `"Hello"` を、`z`
+          に浮動小数点数 `3.14`
+          を代入しています。Pythonは代入された値に基づいて自動的に変数の型を判断します。
+        </p>
+      </section>
+
+      <section>
+        <h2>データ型</h2>
+        <p>
+          Pythonには、いくつかの基本的なデータ型が存在します。それぞれの型には特定の役割があり、適切に使い分けることが重要です。
+        </p>
+        <ul>
+          <li>整数型（int）: 整数を表す。例 - `42`</li>
+          <li>浮動小数点型（float）: 小数点を含む数値を表す。例 - `3.14`</li>
+          <li>文字列型（str）: テキストデータを表す。例 - `"Hello, World!"`</li>
+          <li>論理型（bool）: 真偽値を表す。例 - `True` または `False`</li>
+        </ul>
+        <p>
+          これらのデータ型はプログラム中で頻繁に使用され、データを正確に扱うための基本です。
+        </p>
+      </section>
+
+      <section>
+        <h2>型変換</h2>
+        <p>
+          あるデータ型から別のデータ型に変換することを「型変換」といいます。例えば、整数を文字列に変換する場合は次のようにします。
+        </p>
+        <pre><code>x = 10
+str_x = str(x)
+print(str_x)</code></pre>
+        <p>
+          このコードでは、整数 `10`
+          を文字列に変換し、それを表示しています。逆に、文字列を数値に変換することも可能です。
+        </p>
+      </section>
+
+      <p>
+        <button onclick="history.back()">戻る</button>
+        <a href="chap3.html">
+          <button>第3章へ進む</button>
+        </a>
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Python入門ガイド</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

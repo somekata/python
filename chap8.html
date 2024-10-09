@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python 入門ガイド - 第8章: CSVの取り込みと解析</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="list.html">目次</a>
+    </header>
+
+    <main>
+      <section>
+        <h1>第8章: CSVの取り込みと解析</h1>
+        <p>
+          CSVファイル（Comma-Separated
+          Values）は、データをテキスト形式で保存する一般的な形式です。この章では、Pythonの
+          <strong>pandas</strong>
+          ライブラリを使ってCSVファイルを取り込み、データを解析する方法を学びます。
+        </p>
+      </section>
+
+      <section>
+        <h2>pandasを使ったCSVの読み込み</h2>
+        <p>
+          pandasライブラリを使うと、CSVファイルを簡単に読み込んで、表形式のデータとして扱うことができます。まず、CSVファイルを読み込んでみましょう。
+        </p>
+        <pre><code>import pandas as pd
+
+# CSVファイルの読み込み
+df = pd.read_csv('data.csv')
+
+# 最初の5行を表示
+print(df.head())</code></pre>
+        <p>
+          このコードでは、`pd.read_csv()`を使ってCSVファイルを読み込み、データを`DataFrame`オブジェクトに格納しています。`df.head()`は、最初の5行を表示するための関数です。
+        </p>
+      </section>
+
+      <section>
+        <h2>データの基本操作</h2>
+        <p>
+          `pandas`を使うと、データのフィルタリングや統計情報の取得が簡単に行えます。次に、いくつかの基本操作を見ていきましょう。
+        </p>
+        <pre><code># 特定の列を表示
+print(df['列名'])
+
+# 統計情報の表示
+print(df.describe())
+
+# フィルタリング（条件に基づいたデータの抽出）
+filtered_data = df[df['列名'] > 100]
+print(filtered_data)</code></pre>
+        <p>
+          これらの例では、特定の列を表示したり、データの要約統計量を確認したり、条件に基づいてデータをフィルタリングする方法を示しています。
+        </p>
+      </section>
+
+      <section>
+        <h2>データの可視化</h2>
+        <p>
+          pandasとmatplotlibを組み合わせて、CSVデータをグラフで視覚化することも可能です。次のコードでは、データを可視化する簡単な例を示します。
+        </p>
+        <pre><code>import matplotlib.pyplot as plt
+
+# データのプロット
+df['列名'].plot(kind='bar')
+plt.title('棒グラフ')
+plt.xlabel('X軸')
+plt.ylabel('Y軸')
+plt.show()</code></pre>
+        <p>
+          このコードでは、`pandas`の`plot`メソッドを使ってデータを棒グラフとして可視化しています。`matplotlib`と組み合わせることで、より柔軟なグラフ作成が可能です。
+        </p>
+      </section>
+
+      <section>
+        <h2>CSVファイルへの書き出し</h2>
+        <p>
+          解析したデータを再びCSVファイルとして保存することも簡単です。次のコードでは、`pandas`を使ってCSVファイルを書き出します。
+        </p>
+        <pre><code># データをCSVファイルに保存
+df.to_csv('output.csv', index=False)</code></pre>
+        <p>
+          このコードでは、`df.to_csv()`メソッドを使って、`DataFrame`を新しいCSVファイルとして保存しています。`index=False`はインデックスをCSVに含めないオプションです。
+        </p>
+      </section>
+
+      <p>
+        <button onclick="history.back()">戻る</button>
+        <a href="chap9.html">
+          <button>第9章へ進む</button>
+        </a>
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Python入門ガイド</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
